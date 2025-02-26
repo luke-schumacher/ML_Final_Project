@@ -50,7 +50,7 @@ rand_st=1                                           #Set Random State variable f
 #
 #####################
 
-file1= csv.reader(open('WineQuality_Red.csv'), delimiter=',', quotechar='"')
+file1= csv.reader(open('ML_Final_Project/Further Works/WineQuality_Red.csv'), delimiter=',', quotechar='"')
 
 #Read Header Line
 header=next(file1)            
