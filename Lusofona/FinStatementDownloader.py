@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 
 # Your API key
-API_KEY = "vkjVrD86G1NYTyYIbGNPV3Om4tHj7wVW"
+API_KEY = "INSERT HERE"
 
 # Base URL for the Financial Modeling Prep API
 BASE_URL = "https://financialmodelingprep.com/api/v3/"
