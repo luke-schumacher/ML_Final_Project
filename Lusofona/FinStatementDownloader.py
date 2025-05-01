@@ -2,13 +2,13 @@ import requests
 import pandas as pd
 
 # Your API key
-API_KEY = "INSERT HERE"
+API_KEY = "Insert key here UwU"
 
 # Base URL for the Financial Modeling Prep API
 BASE_URL = "https://financialmodelingprep.com/api/v3/"
 
 # Define the stock symbol and the types of financial statements
-symbol = "NVDA"  # Example: Apple
+symbol = "LMT"  # Example: Apple
 statement_types = [
     "income-statement",  # Income Statement
     "balance-sheet-statement",  # Balance Sheet
