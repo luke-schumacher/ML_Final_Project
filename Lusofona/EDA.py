@@ -746,15 +746,15 @@ def main(financial_path, stock_path, output_path=None, create_visualizations=Tru
 if __name__ == "__main__":
     # --- Update file paths and global variables here ---
     # Set the global ticker and title
-    GLOBAL_STOCK_TICKER = "AAPL" # Example: Change to "AAPL" for Apple
+    GLOBAL_STOCK_TICKER = "VST" # Example: Change to "AAPL" for Apple
     GLOBAL_STOCK_TITLE = "Stock Analysis" # Can keep generic or make specific
 
     # Construct file paths using the global ticker
     # Assuming your financial data file naming convention might also include the ticker
     # Adjust these paths based on your actual file structure and naming
-    financial_csv = f"ML_Final_Project/Lusofona/{GLOBAL_STOCK_TICKER}_all_financial_data.csv"
-    stock_price_csv = f"ML_Final_Project/Lusofona/{GLOBAL_STOCK_TICKER}_historical_data.csv"
-    output_csv = f"ML_Final_Project/Lusofona/{GLOBAL_STOCK_TICKER}_merged_dataset.csv" # Output file name will now include the ticker
+    financial_csv = f"ML_Final_Project/Lusofona/allFinData/{GLOBAL_STOCK_TICKER}_all_financial_data.csv"
+    stock_price_csv = f"ML_Final_Project/Lusofona/allFinData/{GLOBAL_STOCK_TICKER}_historical_data.csv"
+    output_csv = f"ML_Final_Project/Lusofona/allFinData/{GLOBAL_STOCK_TICKER}_merged_dataset.csv" # Output file name will now include the ticker
 
     print(f"Starting EDA for {GLOBAL_STOCK_TICKER} with financial data from: {financial_csv}")
     print(f"and stock price data from: {stock_price_csv}")
