@@ -1,3 +1,0 @@
-    financial_csv = "ML_Final_Project/Lusofona/NVDA_all_financial_data.csv"
-    stock_price_csv = "ML_Final_Project/Lusofona/NVDA_historical_data.csv"
-    output_csv = "ML_Final_Project/Lusofona/nvda_merged_dataset.csv"

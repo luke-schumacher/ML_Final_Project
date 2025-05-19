@@ -746,7 +746,7 @@ def main(financial_path, stock_path, output_path=None, create_visualizations=Tru
 if __name__ == "__main__":
     # --- Update file paths and global variables here ---
     # Set the global ticker and title
-    GLOBAL_STOCK_TICKER = "VST" # Example: Change to "AAPL" for Apple
+    GLOBAL_STOCK_TICKER = "AVGO" # Example: Change to "AAPL" for Apple
     GLOBAL_STOCK_TITLE = "Stock Analysis" # Can keep generic or make specific
 
     # Construct file paths using the global ticker

@@ -1,0 +1,160 @@
+Combined historical and future predictions saved to 'AAPL_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 2.7222
+test_rmse: 14.5849
+train_mae: 2.0708
+test_mae: 12.7959
+train_r2: 0.9808
+test_r2: 0.6316
+
+Combined historical and future predictions saved to 'AMT_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 3.5515
+test_rmse: 3.7153
+train_mae: 2.7599
+test_mae: 2.8700
+train_r2: 0.9856
+test_r2: 0.9565
+
+Combined historical and future predictions saved to 'AVGO_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 2.5556
+test_rmse: 15.3668
+train_mae: 2.2504
+test_mae: 12.3900
+train_r2: 0.9740
+test_r2: 0.7670
+
+Combined historical and future predictions saved to 'CEG_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 3.7947
+test_rmse: 38.4132
+train_mae: 3.1781
+test_mae: 29.0999
+train_r2: 0.9866
+test_r2: 0.1369
+
+Combined historical and future predictions saved to 'F_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 0.3487
+test_rmse: 0.4124
+train_mae: 0.2667
+test_mae: 0.3275
+train_r2: 0.9699
+test_r2: 0.8264
+
+Combined historical and future predictions saved to 'GOOG_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 3.7994
+test_rmse: 20.6115
+train_mae: 3.2536
+test_mae: 18.6850
+train_r2: 0.9490
+test_r2: -1.4969
+
+Combined historical and future predictions saved to 'LLY_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 78.9640
+test_rmse: 63.9073
+train_mae: 76.1081
+test_mae: 52.0327
+train_r2: 0.5592
+test_r2: 0.0477
+
+Combined historical and future predictions saved to 'LMT_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 7.6877
+test_rmse: 36.3245
+train_mae: 6.3573
+test_mae: 27.3832
+train_r2: 0.9742
+test_r2: 0.4561
+
+Combined historical and future predictions saved to 'META_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 29.4831
+test_rmse: 192.4390
+train_mae: 25.5405
+test_mae: 181.4057
+train_r2: 0.8681
+test_r2: -7.0967
+
+Combined historical and future predictions saved to 'MSFT_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 8.4554
+test_rmse: 16.0524
+train_mae: 6.7030
+test_mae: 13.4105
+train_r2: 0.9556
+test_r2: 0.3334
+
+Combined historical and future predictions saved to 'NFLX_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 11.9351
+test_rmse: 94.3335
+train_mae: 8.5218
+test_mae: 73.3018
+train_r2: 0.9920
+test_r2: 0.5951
+
+Combined historical and future predictions saved to 'NVDA_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 1.5678
+test_rmse: 43.9636
+train_mae: 1.4144
+test_mae: 40.2968
+train_r2: 0.9748
+test_r2: -2.3234
+
+Combined historical and future predictions saved to 'PANW_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 11.6919
+test_rmse: 17.7565
+train_mae: 9.7358
+test_mae: 14.7729
+train_r2: 0.6973
+test_r2: 0.0604
+
+Combined historical and future predictions saved to 'RH_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 12.4342
+test_rmse: 56.1307
+train_mae: 9.1883
+test_mae: 43.3738
+train_r2: 0.9943
+test_r2: 0.3813
+
+Combined historical and future predictions saved to 'TSLA_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 8.9575
+test_rmse: 21.3410
+train_mae: 6.6638
+test_mae: 15.4801
+train_r2: 0.9753
+test_r2: 0.9303
+
+Combined historical and future predictions saved to 'VST_transformer_historical_and_future.csv'
+
+Transformer Model Evaluation Metrics:
+train_rmse: 0.4500
+test_rmse: 49.7408
+train_mae: 0.3366
+test_mae: 41.7685
+train_r2: 0.9931
+test_r2: -1.3577
+

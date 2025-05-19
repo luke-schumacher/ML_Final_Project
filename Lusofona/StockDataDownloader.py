@@ -97,7 +97,7 @@ def process_stock_data(stock_data, ticker):
 
 if __name__ == "__main__":
     # Define the ticker
-    ticker = "TSLA"
+    ticker = "AMT"
     # Download and process
     stock_data = download_stock_data(ticker)
     if stock_data is not None:

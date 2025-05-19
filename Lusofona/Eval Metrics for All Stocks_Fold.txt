@@ -1,0 +1,105 @@
+Combined historical and future predictions saved to 'AAPL_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 6.4189
+Average Validation MAE across folds: 5.7563
+Average Validation R² across folds: 0.0191
+
+Combined historical and future predictions saved to 'AMT_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 3.5423
+Average Validation MAE across folds: 2.7817
+Average Validation R² across folds: 0.8178
+
+Combined historical and future predictions saved to 'AVGO_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 9.8392
+Average Validation MAE across folds: 8.1132
+Average Validation R² across folds: -0.7152
+
+Combined historical and future predictions saved to 'CEG_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 26.8835
+Average Validation MAE across folds: 22.8101
+Average Validation R² across folds: -5.3758
+
+Combined historical and future predictions saved to 'F_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 0.4202
+Average Validation MAE across folds: 0.3281
+Average Validation R² across folds: 0.1718
+
+Combined historical and future predictions saved to 'GOOG_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 4.9746
+Average Validation MAE across folds: 4.1327
+Average Validation R² across folds: 0.3686
+
+Combined historical and future predictions saved to 'LLY_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 68.2789
+Average Validation MAE across folds: 64.1637
+Average Validation R² across folds: -27.8095
+
+Combined historical and future predictions saved to 'META_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 29.1968
+Average Validation MAE across folds: 27.0835
+Average Validation R² across folds: -5.4441
+
+Combined historical and future predictions saved to 'LMT_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 18.1989
+Average Validation MAE across folds: 17.2196
+Average Validation R² across folds: -2.2199
+
+Combined historical and future predictions saved to 'MSFT_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 12.9038
+Average Validation MAE across folds: 11.1041
+Average Validation R² across folds: -0.5538
+
+Combined historical and future predictions saved to 'NFLX_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 41.0167
+Average Validation MAE across folds: 39.5058
+Average Validation R² across folds: -5.7658
+
+Combined historical and future predictions saved to 'NVDA_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 10.3001
+Average Validation MAE across folds: 9.6981
+Average Validation R² across folds: -10.7653
+
+Combined historical and future predictions saved to 'PANW_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 10.6979
+Average Validation MAE across folds: 9.9763
+Average Validation R² across folds: -1.3530
+
+Combined historical and future predictions saved to 'TSLA_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 14.0076
+Average Validation MAE across folds: 11.2183
+Average Validation R² across folds: 0.4886
+
+Combined historical and future predictions saved to 'VST_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 13.8574
+Average Validation MAE across folds: 13.4254
+Average Validation R² across folds: -11.2564
+
