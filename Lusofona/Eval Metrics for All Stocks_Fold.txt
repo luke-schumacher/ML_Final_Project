@@ -94,7 +94,14 @@ Combined historical and future predictions saved to 'TSLA_transformer_historical
 ==== Walk-Forward Validation Summary ====
 Average Validation RMSE across folds: 14.0076
 Average Validation MAE across folds: 11.2183
-Average Validation R² across folds: 0.4886
+Average Validation R² across folds: 0.8886
+
+Combined historical and future predictions saved to 'RH_transformer_historical_and_future_wf.csv'
+
+==== Walk-Forward Validation Summary ====
+Average Validation RMSE across folds: 25.7263
+Average Validation MAE across folds: 22.0014
+Average Validation R² across folds: -0.7934
 
 Combined historical and future predictions saved to 'VST_transformer_historical_and_future_wf.csv'
 

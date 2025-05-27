@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformer Model Metrics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .chart-container {
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 6px;
+            pointer-events: none;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 10;
+        }
+        .bar {
+            transition: fill 0.2s ease-in-out;
+        }
+        .bar:hover {
+            opacity: 0.8;
+        }
+        .axis text {
+            font-size: 0.8rem;
+            fill: #4a5568;
+        }
+        .axis path, .axis line {
+            stroke: #cbd5e0;
+        }
+        .x-axis-label, .y-axis-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            fill: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Transformer Model Validation Metrics</h1>
+
+        <div id="rmse-chart" class="chart-container"></div>
+        <div id="mae-chart" class="chart-container"></div>
+        <div id="r-squared-chart" class="chart-container"></div>
+    </div>
+
+    <script>
+        // Data extracted from the provided text
+        const metricsData = [
+            { ticker: 'AAPL', rmse: 6.4189, mae: 5.7563, r_squared: 0.0191 },
+            { ticker: 'AMT', rmse: 3.5423, mae: 2.7817, r_squared: 0.8178 },
+            { ticker: 'AVGO', rmse: 9.8392, mae: 8.1132, r_squared: -0.7152 },
+            { ticker: 'CEG', rmse: 26.8835, mae: 22.8101, r_squared: -5.3758 },
+            { ticker: 'F', rmse: 0.4202, mae: 0.3281, r_squared: 0.1718 },
+            { ticker: 'GOOG', rmse: 4.9746, mae: 4.1327, r_squared: 0.3686 },
+                        { ticker: 'META', rmse: 29.1968, mae: 27.0835, r_squared: -5.4441 },
+            { ticker: 'LMT', rmse: 18.1989, mae: 17.2196, r_squared: -2.2199 },
+            { ticker: 'MSFT', rmse: 12.9038, mae: 11.1041, r_squared: -0.5538 },
+            { ticker: 'NFLX', rmse: 41.0167, mae: 39.5058, r_squared: -5.7658 },
+            { ticker: 'NVDA', rmse: 10.3001, mae: 9.6981, r_squared: -10.7653 },
+            { ticker: 'PANW', rmse: 10.6979, mae: 9.9763, r_squared: -1.3530 },
+            { ticker: 'TSLA', rmse: 14.0076, mae: 11.2183, r_squared: 0.8886 },
+            { ticker: 'RH', rmse: 25.7263, mae: 22.0014, r_squared: -0.7934 },
+            { ticker: 'VST', rmse: 13.8574, mae: 13.4254, r_squared: -11.2564 }
+        ];
+
+        // Calculate overall averages
+        const totalRMSE = metricsData.reduce((sum, d) => sum + d.rmse, 0);
+        const totalMAE = metricsData.reduce((sum, d) => sum + d.mae, 0);
+        const totalRSquared = metricsData.reduce((sum, d) => sum + d.r_squared, 0);
+        const numCompanies = metricsData.length;
+
+        const avgRMSE = totalRMSE / numCompanies;
+        const avgMAE = totalMAE / numCompanies;
+        const avgRSquared = totalRSquared / numCompanies;
+
+        // Add average data point for comparison
+        const dataWithAverages = [
+            ...metricsData,
+            { ticker: 'AVERAGE', rmse: avgRMSE, mae: avgMAE, r_squared: avgRSquared }
+        ];
+
+        // Chart dimensions
+        const margin = { top: 40, right: 30, bottom: 80, left: 60 }; // Increased bottom margin for x-axis labels
+        const getChartDimensions = (containerId) => {
+            const container = document.getElementById(containerId);
+            const width = container.clientWidth - margin.left - margin.right;
+            const height = Math.min(500, width * 0.6) - margin.top - margin.bottom; // Responsive height
+            return { width, height };
+        };
+
+        // Function to create a single bar chart
+        function createBarChart(data, metric, title, containerId, color) {
+            const { width, height } = getChartDimensions(containerId);
+
+            // Clear any existing SVG
+            d3.select(`#${containerId}`).select("svg").remove();
+
+            const svg = d3.select(`#${containerId}`)
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Add chart title
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", -margin.top / 2)
+                .attr("text-anchor", "middle")
+                .attr("class", "chart-title")
+                .text(title);
+
+            // X scale (companies)
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.ticker))
+                .range([0, width])
+                .padding(0.2);
+
+            // Y scale (metric values)
+            const y = d3.scaleLinear()
+                .domain([d3.min(data, d => d[metric]) * 1.1, d3.max(data, d => d[metric]) * 1.1]) // Add some padding to min/max
+                .nice()
+                .range([height, 0]);
+
+            // Add X axis
+            svg.append("g")
+                .attr("class", "x-axis axis")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "rotate(-45)")
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em");
+
+            // X-axis label
+            svg.append("text")
+                .attr("class", "x-axis-label")
+                .attr("x", width / 2)
+                .attr("y", height + margin.bottom - 10)
+                .attr("text-anchor", "middle")
+                .text("Company Ticker");
+
+            // Add Y axis
+            svg.append("g")
+                .attr("class", "y-axis axis")
+                .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format(".2f")));
+
+            // Y-axis label
+            svg.append("text")
+                .attr("class", "y-axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0 - margin.left + 15)
+                .attr("x", 0 - (height / 2))
+                .attr("dy", "1em")
+                .attr("text-anchor", "middle")
+                .text(metric.toUpperCase());
+
+            // Create tooltip div
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip");
+
+            // Add bars
+            svg.selectAll(".bar")
+                .data(data)
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", d => x(d.ticker))
+                .attr("y", d => y(Math.max(0, d[metric]))) // Handle negative values for R²
+                .attr("width", x.bandwidth())
+                .attr("height", d => Math.abs(y(d[metric]) - y(0))) // Handle negative values for R²
+                .attr("fill", d => d.ticker === 'AVERAGE' ? '#4c51bf' : color) // Different color for average
+                .on("mouseover", function(event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(`<strong>${d.ticker}</strong><br/>${metric.toUpperCase()}: ${d[metric].toFixed(4)}`)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+        }
+
+        // Render charts on window load and resize
+        function renderCharts() {
+            createBarChart(dataWithAverages, 'rmse', 'Average Validation RMSE across folds', 'rmse-chart', '#3182ce'); // Blue
+            createBarChart(dataWithAverages, 'mae', 'Average Validation MAE across folds', 'mae-chart', '#38a169');   // Green
+            createBarChart(dataWithAverages, 'r_squared', 'Average Validation R² across folds', 'r-squared-chart', '#dd6b20'); // Orange
+        }
+
+        window.onload = renderCharts;
+        window.onresize = renderCharts;
+
+    </script>
+</body>
+</html>
