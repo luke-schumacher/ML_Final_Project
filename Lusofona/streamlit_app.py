@@ -19,7 +19,7 @@ from tensorflow.keras.models import Sequential
 
 # --- Configuration and Global Variables ---
 # IMPORTANT: Your actual Financial Modeling Prep API Key
-FMP_API_KEY = "INSERT API KEY HERE"  # Replace with your actual API key
+FMP_API_KEY = "INSERT API KEY HERE"  # Replace API KEY FROM DOCUMENT
 FMP_BASE_URL = "https://financialmodelingprep.com/api/v3/"
 
 # Define the types of financial statements to fetch
